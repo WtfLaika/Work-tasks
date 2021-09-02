@@ -1,0 +1,16 @@
+
+countries/
+
+node_modules/
+
+logs 
+*.log 
+
+/dist
+
+.env
+
+.idea/
+
+.vscode/
+*.sw*
