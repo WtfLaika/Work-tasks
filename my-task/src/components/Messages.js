@@ -1,17 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import Message from './Message';
 
-export const  Messages = ({messages}) => {
-    if(!messages.length) { <div className='message'>No messages</div>}
-    return ( messages.map( (message,index)=> <Message message={message} key={`1-${index}`}/>))
+ const  Messages = () => {
+    let myMessages =useSelector(state => state.messages.messages)
+    if(!myMessages.length) { <div className='message'>No messages</div>}
+    return ( myMessages.map( (message,index)=> <Message message={message} key={`1-${index}`}/>))
 }
 
+export default Messages
 
-const mapStateToProps = state => {
-    return {
-        messages:state.messages.messages
-    }
-}
 
-export default connect(mapStateToProps,null)(Messages)

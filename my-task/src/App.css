@@ -6,7 +6,7 @@
 }
 
 .message-area {
-  width: 470%;
+  width: 564%;
   padding: 1.6rem 2.5rem 1.6rem 1rem;
   border: 1px solid #000000;
   border-radius: 15px;
@@ -32,7 +32,7 @@
   border: none;
   position: relative;
   top: -50px;
-  left: 1320px;
+  left: 1625px;
 }
 
 .my-container {
@@ -52,14 +52,13 @@
   color: #FFFFFF;
   line-height: 1rem;
   letter-spacing: 0.5px;
-  margin-bottom: 25px;
+  margin-bottom: 17px;
   border: 1px solid black;
   border-radius: 15px;
   background: #383838;
   color: #FFFFFF;
   font-size:0.9rem ;
   margin-right: 24px;
-  
  max-width: fit-content;
 }
 .message-time{
@@ -76,3 +75,106 @@
   margin-top: 35px !important;
   
 }
+
+@media screen and (max-width: 2561px){
+    .message-area {
+      width: 895%;
+    }
+  
+    .send {
+      left:2467px;
+    }
+  
+  }
+
+  @media screen and (max-width: 2049px){
+    .message-area {
+      width: 688%;
+    }
+  
+    .send {
+      left:1966px;
+    }
+  
+  }
+@media screen and (max-width: 1921px){
+  .message-area {
+    width: 645%;
+  }
+
+  .send {
+    left:1840px;
+  }
+
+}
+
+@media screen and (max-width: 1921px){
+  .message-area {
+    width: 645%;
+  }
+
+  .send {
+    left:1840px;
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 1681px) {
+  .message-area {
+    width: 563%;
+  }
+
+  .send {
+    left:1602px;
+  }
+
+
+}
+
+
+
+@media screen and (max-width: 1600px) {
+  .message-area {
+    width: 537%;
+  }
+
+  .send {
+    left:1525px;
+  }
+
+
+}
+
+
+@media screen and (max-width: 1441px) {
+  .message-area {
+    width: 483%;
+  }
+
+  .send {
+    left:1366px;
+  }
+
+
+}
+
+
+@media screen and (max-width: 1367px) {
+  .message-area {
+    width: 459%;
+  }
+
+  .send {
+    left:1296px;
+  }
+
+  .message-form {
+    top: 89%;
+  }
+}
+
+
+

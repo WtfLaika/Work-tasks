@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 10%;
+}
+
+.countinents{
+    text-align: left;
+}
+
+
+.countrie{
+    margin-left: 30px;
+    text-align: left;
+}
+
+
+.language{
+    margin-left: 60px;
+}
+
+.countinent-line{
+    border-left: 1px dotted #000;
+    height: 10px;
+    margin-left: 10px;
+}
+
+.countrie-line{
+    border-left: 1px dotted #000;
+    height: 10px;
+    margin-left: 10px;
+}

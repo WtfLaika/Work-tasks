@@ -2,55 +2,60 @@ import React from 'react'
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import messegerLogo from '../img/Vector.svg'
-import { createMessage } from './../redux/actions';
+import { createMessage } from '../redux/actions'
 import { PropTypes } from 'prop-types';
-export const MessageForm = ({createMessage}) => {
+import { useDispatch } from 'react-redux';
 
-    const [state,setState] = useState({title:''})
+ const MessageForm = () => {
+
+    const [state, setState] = useState({ title: '' })
+
+    const dispatch = useDispatch();
 
 
-    function submitHandler(e){
+    function submitHandler(e) {
+        e.preventDefault()
         const title = state.title
+
+        if (!title.trim()) {
+            return
+        }
+
         let date = new Date()
         let hours = date.getHours();
         let minutes = date.getMinutes();
-        if(hours < 10){
+        if (hours < 10) {
             hours = `0${hours}`
         }
-        if(minutes < 10){
-           minutes = `0${minutes}`
-        }
-        e.preventDefault() 
-
-        if(!title.trim()){
-            return
+        if (minutes < 10) {
+            minutes = `0${minutes}`
         }
         const newPost = {
-            title, time: `${hours}:${minutes}`,id:Date.now().toString()
+            title, time: `${hours}:${minutes}`, id: Date.now().toString()
         }
-        createMessage(newPost)
-        setState({title:''})
+        dispatch(createMessage(newPost))
+        setState({ title: '' })
     }
 
-    function changeHandler(e){
+    function changeHandler(e) {
         e.persist()
-        setState( prev => ({...prev, ...{
-            [e.target.name] : e.target.value
-        }}))
+        setState(prev => ({
+            ...prev, ...{
+                [e.target.name]: e.target.value
+            }
+        }))
     }
     return (
-   <form className='message-form' onSubmit={submitHandler}>   
-        <input type='text' className='message-area' name='title' value={state.title} onChange={changeHandler} />
-        <button type='submit' className='send'><img src={messegerLogo} alt='send'/></button>
-   </form>
+        <form className='message-form' onSubmit={submitHandler}>
+            <input type='text' className='message-area' name='title' value={state.title} onChange={changeHandler} />
+            <button type='submit' className='send'><img src={messegerLogo} alt='send' /></button>
+        </form>
     )
 }
 
-const mapDispatchToProps = {
-    createMessage
-}
 
-export default connect(null,mapDispatchToProps)(MessageForm)
+
+export default MessageForm
 
 MessageForm.propTypes = {
     title: PropTypes.oneOfType([
@@ -64,5 +69,5 @@ MessageForm.propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
-    
+
 }
